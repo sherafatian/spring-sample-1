@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -23,6 +24,10 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
+        user.setCreatedBy("1");
+        user.setModifiedBy("1");
+        user.setModifiedOn(String.valueOf(LocalDateTime.now()));
+        user.setCreatedOn(String.valueOf(LocalDateTime.now()));
         return userRepository.save(user);
     }
 
