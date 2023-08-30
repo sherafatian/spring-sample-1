@@ -12,20 +12,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class User extends _AbstractModel {
 
-    @Column(name = "first_name")
+    @Column(name = "FIRST_NAME")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "LAST_NAME")
     private String lastName;
 
-    @Column(name = "user_name", nullable = false, unique = true, length = 20)
+    @Column(name = "USER_NAME", nullable = false, unique = true, length = 20)
     private String userName;
 
-    @Column(name = "email")
+    @Column(name = "EMAIL")
     private String email;
 }
