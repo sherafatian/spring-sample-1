@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User extends _AbstractModel {
 
     @Column(name = "FIRST_NAME")
